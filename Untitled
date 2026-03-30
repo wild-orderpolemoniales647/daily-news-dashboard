@@ -1,0 +1,90 @@
+// 🌙 THEME TOGGLE
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+// 🔔 NOTIFICATION
+function showNotification() {
+  const el = document.getElementById("notification");
+  if (!el) return;
+
+  el.style.display = "block";
+  setTimeout(() => {
+    el.style.display = "none";
+  }, 2500);
+}
+
+// 🌐 LANGUAGE STATE
+let currentLang = "en";
+
+// 🔄 LOAD DATA FUNCTION
+function loadData() {
+  fetch(`/api/data?lang=${currentLang}`)
+    .then((res) => res.json())
+    .then((data) => {
+
+      // 🤖 AI Summary
+      document.getElementById("ai-summary").innerText = data.summary;
+
+      // 📰 HEADLINE (first news)
+      if (data.news.length > 0) {
+        const first = data.news[0];
+
+        document.getElementById("headline-title").innerText = first.title;
+        document.getElementById("headline-desc").innerText = first.desc || "";
+        document.getElementById("headline-img").src =
+          first.img || "https://via.placeholder.com/800x300";
+      }
+
+      // 📰 NEWS LIST
+      let html = "";
+      data.news.forEach((n) => {
+        html += `
+        <div class="news-item">
+            <img src="${n.img || 'https://via.placeholder.com/120'}">
+            <div>
+                <h3>${n.title}</h3>
+                <p>${n.desc || ''}</p>
+            </div>
+        </div>
+        `;
+      });
+
+      document.getElementById("news-list").innerHTML = html;
+
+      // 📊 MARKET
+      const marketCurrent = document.getElementById("market-current");
+      const marketHighLow = document.getElementById("market-highlow");
+
+      if (marketCurrent && data.market) {
+        marketCurrent.innerText = `Current: ${data.market.current ?? "—"}`;
+      }
+
+      if (marketHighLow && data.market) {
+        marketHighLow.innerText =
+          `High/Low: ${data.market.high ?? "—"} / ${data.market.low ?? "—"}`;
+      }
+
+      // 🪙 COMMODITIES
+      const goldEl = document.getElementById("gold-price");
+      const silverEl = document.getElementById("silver-price");
+
+      if (goldEl) goldEl.innerText = `Gold: ${data.gold ?? "—"}`;
+      if (silverEl) silverEl.innerText = `Silver: ${data.silver ?? "—"}`;
+    })
+    .catch((err) => {
+      console.error("Failed to load /api/data", err);
+    });
+}
+
+// 🌐 LANGUAGE SWITCH FUNCTION
+function setLang(lang) {
+  currentLang = lang;
+  loadData();
+
+  // optional notification
+  showNotification();
+}
+
+// 🚀 INITIAL LOAD
+loadData();
